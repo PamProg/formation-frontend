@@ -2,37 +2,42 @@
 var readline = require('readline');
 var service = require('./service.js');
 
-console.log("*** Application Conférence ***\n",
-            "1. Liste de tous les présentateurs\n",
-            "2. Top présentateurs\n",
-            "3. Liste des sessions\n",
-            "4. Détail d'une session\n");
+console.log("*** Application Conférence ***\n");
 
-
-var tableauOptions = [afficherNomPrenomPresentateurs, 
-                      afficherNomPrenomTopPresentateurs,
-                      afficherTitreSessions,
-                      afficherDescriptionPresentateurSession];
+var tableauOptions = [{id: 1, libelle: "1. Liste de tous les présentateurs", exec:afficherNomPrenomPresentateurs}, 
+                      {id: 2, libelle: "2. Top présentateurs", exec: afficherNomPrenomTopPresentateurs},
+                      {id: 3, libelle: "3. Liste des sessions", exec: afficherTitreSessions},
+                      {id: 4, libelle: "4. Détail d'une session", exec: afficherDescriptionPresentateurSession}];
 
 var interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
 
-interface.on("line", (line) => {
-    tableauOptions[parseInt(line)-1]();
+tableauOptions.forEach(e => {
+    console.log(e.libelle);
+    interface.on("line", (line) => {
+        var option = tableauOptions.find(o => o.id == parseInt(line));
+        option.exec();
+    });
 });
+
+
 
 function afficherNomPrenomPresentateurs() {
     var presentateurs = service.listerTousLesPresentateurs();
-    presentateurs.map(p => p.firstname + " " + p.lastname)
-                 .forEach(p => {console.log(p);});
+    afficherNomPrenom(presentateurs);
 }
+
 
 function afficherNomPrenomTopPresentateurs() {
     var topPresentateurs = service.listerTopPresentateurs();
-    topPresentateurs.map(p => p.firstname + " " + p.lastname)
-                 .forEach(p => {console.log(p);});
+    afficherNomPrenom(topPresentateurs);
+}
+
+function afficherNomPrenom(presentateurs) {
+    presentateurs.map(p => p.firstname + " " + p.lastname)
+                    .forEach(p => {console.log(p);});
 }
 
 function afficherTitreSessions() {
