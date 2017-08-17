@@ -18,7 +18,7 @@ function trouverUneSession(idSession) {
 
 function listerTopPresentateurs() {
     speakers = listerTousLesPresentateurs();
-    return speakers.find(function(element) {
+    return speakers.filter(function(element) {
         return element.topspeaker == true;
     });
 }
