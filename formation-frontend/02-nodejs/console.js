@@ -14,7 +14,7 @@ var interface = readline.createInterface({
     output: process.stdout,
 });
 
-tableauOptions.forEach(e => {
+tableauOptions.forEach(e => { // Ce forEach n'est pas très malin en fait :/
     console.log(e.libelle);
     interface.on("line", (line) => {
         var option = tableauOptions.find(o => o.id == parseInt(line));
