@@ -1,0 +1,42 @@
+<section id="tp04">
+    <h1>TP 04 - Formulaire</h1>
+
+    <!-- Test 1 : model binding -->
+    <!-- TODO : ajouter l'affichage des données saisies via un modèle -->
+    <form name="form1" novalidate>
+        Name: <input type="text" ng-model="user.name"/><br> 
+        E-mail: <input type="email" ng-model="user.email"/><br>
+    </form>
+    <p>{{user}}</p>
+
+
+    <!-- Test 2 : 2 états-->
+    <!-- TODO :
+- ajouter un bouton de sauvegarde et un bouton de reset
+- ajouter l'affichage de l'état édition et de l'état tampon
+-->
+    <form name="form2" ng-controller="Form2Controller as ctrl" novalidate>
+        Name: <input type="text" value="{{ctrl.savedUser.name}}" ng-model="ctrl.currentUser.name"/><br> 
+        E-mail: <input type="email" value="{{ctrl.savedUser.email}}" ng-model="ctrl.currentUser.email"/><br>
+        <button ng-click="ctrl.reset()">RESET</button>
+        <button ng-click="ctrl.save()">SAVE</button>
+        <p>Current : {{ctrl.currentUser}}</p>
+        <p>Saved : {{ctrl.savedUser}}</p>
+    </form>
+    
+
+
+    <!-- Test 3 : validation -->
+    <!-- TODO : ajouter une validation Angular avec affichage des erreurs et
+utilisation des classes CSS -->
+    <form name="form3" id="form3">
+        Name: <input type="text" name="name" required ng-model="user3.name"/><br> 
+        <p ng-show="form3.name.$error.required">Invalid : Tell us your name</p>
+        <p>Errors : {{form3.email.$error}} </p>
+        E-mail: <input type="email" name="email" required ng-model="user3.email"/><br>
+        <p ng-show="form3.email.$error.required">Invalid : Tell us your email</p>
+        <p ng-show="form3.email.$error.email">Invalid : This is not a valid email</p>
+        <p>Errors : {{form3.name.$error}} </p>
+    </form>
+
+</section>

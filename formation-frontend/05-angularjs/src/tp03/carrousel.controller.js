@@ -1,25 +1,26 @@
-export default function CarrouselCtrl($scope, $interval) {
-    $scope.images = [
-        { 'name': 'New York', 'url': 'img/nyc.jpg' },
-        { 'name': 'Paris', 'url': 'img/paris.jpg' },
-        { 'name': 'Rio de Janeiro', 'url': 'img/rio-de-janeiro.jpg' },
-        { 'name': 'Rome', 'url': 'img/rome.jpg' },
-        { 'name': 'Tokyo', 'url': 'img/tokyo.jpg' }
-    ];
+export default class CarrouselCtrl {
 
-    $interval(() => $scope.next(), 2500);
+    constructor($interval) {
+        this.$interval = $interval;
+    }
 
-    // TODO ajouter une variable 'currentId' au scope 
-    //indiquant l'index de l'image courante
-    $scope.currentId = 0;
+    $onInit() {
+        this.images = [
+            { 'name': 'New York', 'url': 'img/nyc.jpg' },
+            { 'name': 'Paris', 'url': 'img/paris.jpg' },
+            { 'name': 'Rio de Janeiro', 'url': 'img/rio-de-janeiro.jpg' },
+            { 'name': 'Rome', 'url': 'img/rome.jpg' },
+            { 'name': 'Tokyo', 'url': 'img/tokyo.jpg' }
+        ];
+        this.currentId = 0;
+        // this.$interval(() => this.next(), 2500);
+    }
 
-    // TODO ajouter un fonction next()
-    $scope.next = function() {
-        $scope.currentId == $scope.images.length-1 ? $scope.currentId = 0 : $scope.currentId++;
+    next() {
+        this.currentId == this.images.length-1 ? this.currentId = 0 : this.currentId++;
     };
 
-    // TODO ajouter un fonction previous()
-    $scope.previous = function() {
-        $scope.currentId == 0 ? $scope.currentId = $scope.images.length-1 : $scope.currentId--;
+    previous() {
+        this.currentId == 0 ? this.currentId = this.images.length-1 : this.currentId--;
     };
 }

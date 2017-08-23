@@ -2,16 +2,14 @@
     <h1>TP 03 - Carrousel d'images</h1>
 
 
-    <div ng-controller="CarrouselCtrl">
+    <div ng-controller="CarrouselCtrl as ctrl">
 
-        <button ng-click="previous()"><<</button>
-        <button ng-click="next()">>></button>
+        <button ng-click="ctrl.previous()"><<</button>
+        <button ng-click="ctrl.next()">>></button>
 
-        <h4>{{images[currentId].name}}</h4>
+        <h4>{{ctrl.images[ctrl.currentId].name}}</h4>
 
-        <img ng-src="{{images[currentId].url}}"/>
-
-
+        <img ng-src="{{ctrl.images[ctrl.currentId].url}}"/>
 
     </div>
 
