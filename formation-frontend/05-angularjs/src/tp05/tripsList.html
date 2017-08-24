@@ -1,0 +1,13 @@
+<section id="tp05">
+    <h1>TP 05 - Communication avec $http</h1>
+
+    <ul ng-controller="HttpController as ctrl">
+        <li ng-repeat="ville in ctrl.villes">
+            <input ng-model="ville.name"/> - 
+            <input ng-model="ville.price"/>
+            <button ng-disabled="!ville.name && !ville.price" ng-click="ctrl.save(ville)">Save</button>
+            <br><br>
+            <img src="{{ville.imageUrl}}">
+        </li>
+    </ul>
+</section>
