@@ -1,0 +1,13 @@
+<section id="tp06">
+    <h1>TP 06 - Communication avec $resource</h1>
+
+    <ul ng-controller="ResourceController as ctrl">
+        <li ng-repeat="ville in ctrl.villes" ng-init="displayTextArea = false">
+            <p>{{ville.name}} - <strong>{{ville.price}} €</strong></p>
+            <img ng-click="displayTextArea = !displayTextArea" ng-src="{{ville.imageUrl}}"> <br>
+            <textarea ng-show="displayTextArea" ng-model="ville.description" rows=8 cols=64></textarea> <br>
+            <button ng-show="displayTextArea" ng-click="ctrl.update(ville)">Update</button>
+        </li>
+    </ul>
+
+</section>

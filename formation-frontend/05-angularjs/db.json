@@ -2,7 +2,7 @@
   "trips": [
     {
       "id": "paris",
-      "name": "TEZEZR",
+      "name": "Paris",
       "imageUrl": "img/paris.jpg",
       "price": 1425
     },
@@ -34,7 +34,7 @@
       "imageUrl": "img/paris.jpg",
       "price": "100",
       "initialPrice": "200",
-      "description": "Déguster un pain au chocolat à la terrasse d'un café, se délasser après une journée de balade sur les quais de la Seine, s'émerveiller devant des lieux symboliques comme la Tour Eiffel ou l'Arc de triomphe… Un séjour à Paris réussi conjugue activités et détente, tout en prenant le temps de savourer un bon repas tout comme les célèbres expositions du Louvre. Commencez par prendre des forces à Notre-Dame, puis partez à la chasse aux bonnes affaires au marché aux puces de Montreuil ou goûtez aux spécialités vendues au marché biologique de Raspail et pour terminer votre journée en beauté, couronnez le tout par un spectacle osé au Moulin Rouge.",
+      "description": "Paris c'est cool !",
       "comments": [
         {
           "id": "sky44",
@@ -43,6 +43,62 @@
         {
           "id": "jean49",
           "text": "J'ai détesté"
+        },
+        {
+          "id": "anonymous",
+          "text": "Ceci est un commentaire"
+        },
+        {
+          "id": "anonymous",
+          "text": "Ceci est un commentaire également"
+        },
+        {
+          "id": "anonymous",
+          "text": "etstsdfsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "etstsdfsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "testsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "testsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "testsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "testsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "testsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "testsdf"
+        },
+        {
+          "id": "anonymous",
+          "text": "tesfd"
+        },
+        {
+          "id": "anonymous",
+          "text": "sdgsdfh"
+        },
+        {
+          "id": "anonymous",
+          "text": "eqrydjhg"
+        },
+        {
+          "id": "anonymous",
+          "text": "tsfd"
         }
       ],
       "steps": [
@@ -73,7 +129,7 @@
       "imageUrl": "img/nyc.jpg",
       "price": "412",
       "initialPrice": "500",
-      "description": "Puisqu'une seule visite ne suffit pas pour conquérir New York, concentrez-vous plutôt sur l'essentiel : l'Empire State Building, la Statue de la Liberté, Central Park, le Metropolitan Museum of Art, puis sortez des sentiers battus en visitant The Cloisters ou l'une des bibliothèques de la ville. Allez faire les boutiques au style bohème à West Village ou savourez la gastronomie du Upper West Side. Mais imprégnez-vous de l'effervescence régnant dans le marché abrité à l'intérieur de Grand Central Station pour avoir un véritable avant-goût du meilleur que la ville a à vous offrir.",
+      "description": "New York aussi",
       "comments": [
         {
           "id": "albert",
@@ -90,6 +146,14 @@
         {
           "id": "jean49",
           "text": "J'ai détesté"
+        },
+        {
+          "id": "anonymous",
+          "text": "Ceci est un joli commentaire"
+        },
+        {
+          "id": "anonymous",
+          "text": "etst"
         }
       ],
       "steps": [
@@ -146,7 +210,13 @@
       "geolocation": {
         "latitude": 41.89292,
         "longitude": 12.48252
-      }
+      },
+      "comments": [
+        {
+          "id": "anonymous",
+          "text": "Ceci est un joli commentaire pour Rome"
+        }
+      ]
     },
     {
       "id": "rio-de-janeiro",
@@ -175,7 +245,13 @@
       "geolocation": {
         "latitude": -22.9134,
         "longitude": -43.20071
-      }
+      },
+      "comments": [
+        {
+          "id": "anonymous",
+          "text": "test"
+        }
+      ]
     },
     {
       "id": "tokyo",

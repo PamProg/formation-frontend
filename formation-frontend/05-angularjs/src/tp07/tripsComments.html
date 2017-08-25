@@ -1,0 +1,21 @@
+<section id="tp07">
+    <h1>TP 07 - Services</h1>
+
+    <div ng-controller="ServiceController as ctrl">
+        <select ng-model="ctrl.tripSelected" ng-change="ctrl.selectedOption()">
+            <option ng-repeat="trip in ctrl.trips" ng-value="trip.id">{{trip.name}}</option>
+        </select>
+        <br> <br>
+        <img ng-repeat="step in ctrl.steps" ng-src="{{step.imageUrl}}" />
+
+        <ul>
+            <li ng-repeat="c in ctrl.comments">{{c.id}} : {{c.text}}</li>
+        <ul>
+        <br>
+        <textarea rows=4 cols=64 ng-show="ctrl.tripSelected" ng-model="ctrl.commentToSave"></textarea>
+        <br>
+        <button ng-click="ctrl.saveComment()" ng-show="ctrl.tripSelected">Comment</button>
+
+    </div>
+
+</section>
